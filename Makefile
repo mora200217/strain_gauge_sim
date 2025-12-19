@@ -14,6 +14,8 @@ MSH      := $(DIR_MSH)/$(TARGET).msh
 
 # Detect OS (macOS / Linux / Windows)
 OS := $(shell uname 2>/dev/null || echo Windows)
+PARAVIEW_APP := /Applications/ParaView-6.0.0-RC1.app/Contents/MacOS/paraview
+
 
 # Gmsh executable (override if needed)
 GMSH := gmsh
@@ -50,3 +52,13 @@ dirs:
 clean:
 	@echo "▶ Cleaning generated mesh..."
 	@rm -f $(DIR_MSH)/*.msh 2>/dev/null || true
+
+precompile:
+	julia --project=. -e 'using Pkg; Pkg.precompile()'
+
+# Run Julia simulation
+julia: 
+	julia --project=. main.jl
+
+paraview:
+	open -a ${PARAVIEW_APP} load_cell_results.vtu  

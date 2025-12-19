@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "load-cell"
+version = "0.1.0"
+description = "FEM simulation of a load cell with LTspice integration"
+authors = ["Andrés Morales <amoralesma@unal.edu.co>"]
+readme = "README.md"
+packages = [{ include = "load_cell_py" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+matplotlib = "^3.8"
+PyLTSpice = "^0.1"
+numpy = "^1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

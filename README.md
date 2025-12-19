@@ -3,7 +3,7 @@
 Comenzaremos con una simulación teórica de FEM que unifique la ecuación constitutiva con el comportamiento esperado. Se usará para proponer un acondicionamiento adecuado que luego será empleado en físico como un bono en la materia. 
 
 <div style="display: flex; justify-content: center;">
-  <img src="https://github.com/mora200217/strain_gauge_sim/blob/main/docs/sim_flow_diagram.png" width="90%"/>
+  <img src="https://github.com/mora200217/strain_gauge_sim/blob/main/docs/sim_flow_diagram.jpg" width="90%"/>
 </div>
 
 ## Elasticidad lineal y sensores (Gridap.jl + Julia)

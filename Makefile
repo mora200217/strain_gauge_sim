@@ -61,4 +61,10 @@ julia:
 	julia --project=. main.jl
 
 paraview:
-	open -a ${PARAVIEW_APP} load_cell_results.vtu  
+	open -a ${PARAVIEW_APP} load_cell_results.vtu 
+
+sim: 
+	@echo "▶ Running main simulation..."
+	$(MAKE) julia 
+	
+	

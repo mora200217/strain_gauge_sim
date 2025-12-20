@@ -6,11 +6,13 @@ TARGET   := load_cell_beam
 DIR_GEO  := geo
 DIR_STEP := step
 DIR_MSH  := mesh
+DIR_PY   := load_cell_py
 
 GEO      := $(DIR_GEO)/$(TARGET).geo
 OPT      := $(DIR_GEO)/$(TARGET).opt
 STEP     := $(DIR_STEP)/$(TARGET).step
 MSH      := $(DIR_MSH)/$(TARGET).msh
+
 
 # Detect OS (macOS / Linux / Windows)
 OS := $(shell uname 2>/dev/null || echo Windows)
@@ -66,5 +68,9 @@ paraview:
 sim: 
 	@echo "▶ Running main simulation..."
 	$(MAKE) julia 
+
 	
+spice_sim: 
+	@echo "▶ Running SPICE simulation..."
+	poetry run python ${DIR_PY}/spice_sim_conditioning_cir.py
 	

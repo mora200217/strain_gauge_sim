@@ -69,7 +69,7 @@ end
 
 
 writevtk(
-  Ω, "load_cell_results",
+  Ω, "results/load_cell_results",
   cellfields = Dict(
     "eps_long" => CellField(ε_long(uh_last), Ω),
     "strain"   => CellField(ε(uh_last), Ω)
@@ -83,7 +83,7 @@ scatter!(ax, forces, Rhist)
 
 fig
 
-writedlm("resistance.txt", hcat(forces, Rhist))
+writedlm("results/resistance.txt", hcat(forces, Rhist))
 # --- Guardar para LTspice ---
 
 # Tomar solo los primeros 10 valores

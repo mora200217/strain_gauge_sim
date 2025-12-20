@@ -11,6 +11,7 @@ python = "^3.9"
 matplotlib = "^3.8"
 PyLTSpice = "^0.1"
 numpy = "^1"
+ltspice = "^1.0.6"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
